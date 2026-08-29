@@ -1,10 +1,13 @@
 Datos/
 datos/
 datos_modelo/
+data/raw/
+data/interim/
 salidas_modelo/
 salidas_modelo_v3/
 outputs/
 *.csv
+!data/processed/*.csv
 *.tsv
 *.xlsx
 *.xls
@@ -27,3 +30,4 @@ venv/
 env/
 .DS_Store
 Thumbs.db
+/pronostico-demanda-energia/

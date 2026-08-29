@@ -1,0 +1,55 @@
+﻿formato,campo,campo_normalizado,descripcion,tipo_dato_referencia,numero_registros_referencia
+TC2/TC1,NIU,niu,Número de Identificación del Usuario o Suscriptor: Se refiere al número que el Operador de Red le ha asignado a cada uno de los usuarios conectados a su sistema,int64,564705
+TC2,Tipo Usuario Riesgo Cartera,tipo_usuario_riesgo_cartera,Corresponde a la clasificación del tipo de usuario asociado a los riesgos de cartera definidos en la Resolución CREG 180 de 2014,int64,564705
+TC2,Tipo Factura,tipo_factura,Corresponde al tipo de facturación ,int64,564705
+TC2,Fecha de Inicio del Periodo de Facturación,fecha_de_inicio_del_periodo_de_facturacion,Se refiere a la fecha desde la cual comienza a registrarse el consumo a facturar,object,564705
+TC2,Fecha de Lectura Actual,fecha_de_lectura_actual,Se refiere a la fecha de la lectura del medidor con la cual se calcula el consumo facturado,object,564705
+TC2,Fecha de Lectura Anterior,fecha_de_lectura_anterior,Se refiere a la fecha de la lectura del medidor en el periodo inmediatamente anterior,object,564705
+TC2,Días Facturados,dias_facturados,Corresponde al número de días facturados en el periodo,int64,564705
+TC2,Tipo de Tarifa,tipo_de_tarifa,Corresponde al tipo de tarifa con la que se liquidó el último consumo de dicha factura,int64,564705
+TC2,Tipo de Lectura,tipo_de_lectura,"Hace referencia al tipo de lectura (Real, estimada o no tiene medidor)",int64,564705
+TC2,Consumo Usuario (kWh),consumo_usuario_kwh,Es el consumo de energía eléctrica en kWh que es facturado para el respectivo periodo,int64,564705
+TC2,Consumo Promedio Semestral (kWh),consumo_promedio_semestral_kwh,Este valor corresponde al consumo promedio histórico del usuario durante los últimos seis meses en kWh,int64,564705
+TC2,Consumo de Subsistencia,consumo_de_subsistencia,"Corresponde a la cantidad mínima de electricidad definida por la UPME, utilizada en un mes por un usuario típico para satisfacer las necesidades básicas",int64,564705
+TC2,Valor Facturación por Consumo Usuario ($),valor_facturacion_por_consumo_usuario,"Corresponde al valor en pesos ($) del consumo facturado durante el periodo reportado (no incluye subsidios, ni contribuciones, ni mora, ni cartera)",int64,564705
+TC2,Refacturación por Consumo Usuario - (kWh),refacturacion_por_consumo_usuario_kwh,"Corresponde al consumo en kWh que se facturó de más o se dejó de facturar, durante periodos anteriores al que corresponde la factura que se reporta",int64,564705
+TC2,Valor Refacturación por Consumo Usuario ($),valor_refacturacion_por_consumo_usuario,"Corresponde al valor en pesos ($) de los kWh consumidos que se facturaron de más o se dejaron de facturar, durante un periodo anterior",int64,564705
+TC2,Valor del Subsidio Usuario ($),valor_del_subsidio_usuario,Corresponde al valor facturado en pesos ($) de subsidios aplicados en la factura a los usuarios que se vean beneficiados por estos,int64,564705
+TC2,Valor Refacturación del Subsidio Usuario($),valor_refacturacion_del_subsidio_usuario,"Corresponde al valor en pesos ($) de los subsidios que se facturaron de más o se dejaron de facturar, durante un periodo anterior y de los ajustes por concepto de subsidios otorgados en el mismo mes de facturación",int64,564705
+TC2,Número de Facturas FOES,numero_de_facturas_foes,Corresponde a la cantidad de facturas a las cuales se les está aplicando el beneficio,int64,564705
+TC2,Valor FOES Aplicado al Consumo Usuario ($),valor_foes_aplicado_al_consumo_usuario,Corresponde al valor $/kWh del beneficio FOES aplicado al consumo del usuario,int64,564705
+TC2,Valor Refacturación FOES Aplicado al Consumo Usuario ($),valor_refacturacion_foes_aplicado_al_consumo_usuario,Corresponde al valor en pesos ($) del beneficio FOES del consumo del usuario que se aplicaron de más o se dejaron de aplicar durante periodos anteriores al que corresponde la factura que se reporta,int64,564705
+TC2,Valor de la Contribución ($),valor_de_la_contribucion,"Corresponde al valor facturado en pesos ($) por concepto de ""contribución de solidaridad"" (Fondo de Solidaridad para Subsidios y Redistribución de Ingresos - FSSRI) de acuerdo con la normatividad vigente",int64,564705
+TC2,Valor Refacturación de la Contribución ($),valor_refacturacion_de_la_contribucion,"Corresponde al valor en pesos ($) de las contribuciones que se facturaron de más o se dejaron de facturar durante un periodo anterior, así como a los ajustes por concepto de contribución efectuados en el mismo mes de facturación",int64,564705
+TC2,Valor Cartera Consumo ($),valor_cartera_consumo,Corresponde al valor de cartera asociado al consumo adeudado por el usuario,int64,564705
+TC2,Valor Cartera Contribuciones ($),valor_cartera_contribuciones,Valor en pesos ($) asociadas a las contribuciones no pagadas por el usuario,int64,564705
+TC2,TVC,tvc,Total de eventos compensados al usuario hasta el mes anterior de acuerdo con lo definido en la Resolución CREG 015 de 2018,int64,564705
+TC2,VC ($),vc,Corresponde al valor total en pesos ($) compensados al usuario en la factura de acuerdo con lo definido en la Resolución CREG 015 de 2018,int64,564705
+TC2,VCD ($),vcd,Corresponde al valor en pesos ($) a compensar al usuario en la factura por incumplimiento de la duración máxima de eventos de acuerdo con lo definido en la Resolución CREG 015 de 2018,int64,564705
+TC2,VCF ($),vcf,Corresponde al valor en pesos ($) a compensar al usuario en la factura por incumplimiento del número máximo de eventos garantizado de acuerdo con lo definido en la Resolución CREG 015 de 2018,int64,564705
+TC2,CEC (kWh),cec_kwh,"Corresponde al consumo estimado a compensar en kWh según factura, de acuerdo con lo definido en la Resolución CREG 015 de 2018",int64,564705
+TC2,CONPU ($),conpu,Corresponde al valor total en pesos ($) de las compensaciones no pagadas al usuario durante el periodo de facturación,int64,564705
+TC2,THC,thc,Corresponde al total de horas compensadas al usuario en el periodo de facturación anterior de acuerdo con lo definido en la Resolución CREG 015 de 2018,float64,564705
+TC2,HC,hc,Horas de compensación al usuario en el mes,float64,564705
+TC2,Refacturación por Compensación ($),refacturacion_por_compensacion,"Corresponde al valor en pesos del total del valor compensado al usuario, que se facturaron de más o se dejaron de facturar de acuerdo con la normativa vigente",int64,564705
+TC2,Tipo Medidor,tipo_medidor,"Corresponde al tipo de equipo o sistema de medida instalado, con el cual se determina el consumo del usuario",int64,564705
+TC2,Valor Total Facturado ($),valor_total_facturado,Corresponde al valor total facturado en pesos ($) al usuario en el periodo reportado,int64,564705
+TC2,Tarifa Aplicada ($-kWh),tarifa_aplicada_kwh,"Corresponde al valor en pesos ($/kWh) de la tarifa aplicada a consumos inferiores o iguales al Consumo de Subsistencia (CS), cuando se trate de un usuario subsidiado; o a la tarifa con contribución cuando se trate de un usuario contribuyente; o al Costo Unitario (CU) cuando se trate de un usuario a quien se le aplique la tarifa plena",float64,564705
+TC2,Fecha de Publicación de la Tarifa Aplicada,fecha_de_publicacion_de_la_tarifa_aplicada,Corresponde a la fecha de publicación de la tarifa que se aplicó al usuario en el periodo de facturación,object,564573
+TC2,VC (veces),vc_veces,Número de eventos de compensación al usuario en el mes,int64,564705
+TC2,Consumo Recuperado (kWh),consumo_recuperado_kwh,Es el consumo de energía eléctrica en kWh que es facturado como resultado de un proceso de recuperación de consumos,int64,564705
+TC2,Valor Consumo Recuperado ($),valor_consumo_recuperado,Corresponde al valor en pesos ($) del consumo facturado como resultado de un proceso de recuperacióón de consumos,int64,564705
+TC2,Refacturación Consumo Recuperado (kWh),refacturacion_consumo_recuperado_kwh,Es el consumo de energía eléctrica en kWh que es refacturado como resultado de un proceso de recuperación de consumos,int64,564705
+TC2,Refacturación Valor Consumo Recuperado ($),refacturacion_valor_consumo_recuperado,Corresponde al valor en pesos ($) del consumo refacturado como resultado de un proceso de recuperación de consumos,int64,564705
+TC2,Valor de la Contribución o Subsidio recuperado ($),valor_de_la_contribucion_o_subsidio_recuperado,Corresponde al valor en pesos ($) de las contribuciones o subsidios que se facturaron de más o se dejaron de facturar durante el periodo recuperado como resultado de un proceso de recuperación de consumos,int64,564705
+TC2,Opción Tarifaria,opcion_tarifaria,Corresponde a si el usuario se acogió o no a la opción tarifaria de la que trata la Resolución CREG 012 de 2020,int64,564705
+TC2,Año de reporte,ano_de_reporte,Corresponde al año de reporte de la información a certificar,int64,564705
+TC2,Mes de reporte,mes_de_reporte,Corresponde al mes de reporte de la información a certificar,int64,564705
+TC1,nivel de tension,nivel_de_tension,Nivel de Tensión al que pertenece el usuario. Debe corresponder exactamente al nivel de los cargos por uso de STR o SDL que se le liquidan en la factura,int64,569906
+TC1,conexion de red,conexion_de_red,Hace referencia al tipo de red a la cual se conecta el usuario,int64,569909
+TC1,codigo DANE,codigo_dane,Corresponde a la codificación dada por el DANE a la división político-administrativa de Colombia,int64,569916
+TC1,ubicacion,ubicacion,"Indica si el usuario corresponde a un inmueble rural disperso, urbano o centro poblado",int64,569917
+TC1,condiciones especiales,condiciones_especiales,En la prestación del servicio público de energía eléctrica existen algunas condiciones especiales aplicables a los usuarios,int64,569919
+TC1,estrato/sector,estrato_sector,Se refiere al estrato o sector asociado a la estructura tarifaria aplicada,int64,569922
+TC1,autogenerador,autogenerador,Corresponde al usuario que realiza la actividad de autogeneración. El usuario puede ser o no ser propietario de los activos de autogeneración,int64,569903
+TC1,exportar energia,exportar_energia,Corresponde a la capacidad del Autogenerador de entregar excedentes a la red,float64,149

@@ -1,0 +1,199 @@
+{
+  "generated_utc": "2026-08-26T13:50:33.382303+00:00",
+  "source_inventory": [
+    {
+      "relative_path": "Datos/Demanda proyectada 2025.xlsx",
+      "size_bytes": 9575,
+      "modified_utc": "2026-08-14T16:29:39.986099+00:00"
+    },
+    {
+      "relative_path": "Datos/Demanda_Real_2025.xlsx",
+      "size_bytes": 349554,
+      "modified_utc": "2026-08-14T16:29:39.997098+00:00"
+    },
+    {
+      "relative_path": "Datos/TC1-2025/Formato TC1_10_2025.csv",
+      "size_bytes": 83932030,
+      "modified_utc": "2026-08-14T16:29:21.725617+00:00"
+    },
+    {
+      "relative_path": "Datos/TC1-2025/Formato TC1_11_2025.csv",
+      "size_bytes": 84125204,
+      "modified_utc": "2026-08-14T16:29:22.364517+00:00"
+    },
+    {
+      "relative_path": "Datos/TC1-2025/Formato_TC1_01_2025.csv",
+      "size_bytes": 82215460,
+      "modified_utc": "2026-08-14T16:29:22.979952+00:00"
+    },
+    {
+      "relative_path": "Datos/TC1-2025/Formato_TC1_02_2025.csv",
+      "size_bytes": 82396349,
+      "modified_utc": "2026-08-14T16:29:23.631030+00:00"
+    },
+    {
+      "relative_path": "Datos/TC1-2025/Formato_TC1_03_2025.csv",
+      "size_bytes": 82556594,
+      "modified_utc": "2026-08-14T16:29:24.224812+00:00"
+    },
+    {
+      "relative_path": "Datos/TC1-2025/Formato_TC1_04_2025.csv",
+      "size_bytes": 82744797,
+      "modified_utc": "2026-08-14T16:29:24.846427+00:00"
+    },
+    {
+      "relative_path": "Datos/TC1-2025/Formato_TC1_05_2025.csv",
+      "size_bytes": 82903010,
+      "modified_utc": "2026-08-14T16:29:25.526094+00:00"
+    },
+    {
+      "relative_path": "Datos/TC1-2025/Formato_TC1_06_2025.csv",
+      "size_bytes": 83122729,
+      "modified_utc": "2026-08-14T16:29:26.248132+00:00"
+    },
+    {
+      "relative_path": "Datos/TC1-2025/Formato_TC1_07_2025.csv",
+      "size_bytes": 83356532,
+      "modified_utc": "2026-08-14T16:29:26.867065+00:00"
+    },
+    {
+      "relative_path": "Datos/TC1-2025/Formato_TC1_08_2025.csv",
+      "size_bytes": 83500086,
+      "modified_utc": "2026-08-14T16:29:27.494147+00:00"
+    },
+    {
+      "relative_path": "Datos/TC1-2025/formato_tc1_09_2025.csv",
+      "size_bytes": 83712928,
+      "modified_utc": "2026-08-14T16:29:28.130599+00:00"
+    },
+    {
+      "relative_path": "Datos/TC1-2025/formato_TC1_12_2025.csv",
+      "size_bytes": 84376544,
+      "modified_utc": "2026-08-14T16:29:28.770290+00:00"
+    },
+    {
+      "relative_path": "Datos/TC1-2025/Formato_TC1_ene 26.csv",
+      "size_bytes": 83906945,
+      "modified_utc": "2026-08-26T13:21:50.868544+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_20251.csv",
+      "size_bytes": 154240644,
+      "modified_utc": "2026-08-14T16:29:30.091047+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_20251.xlsx",
+      "size_bytes": 29902481,
+      "modified_utc": "2026-08-14T16:29:30.311081+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_202510.csv",
+      "size_bytes": 157699256,
+      "modified_utc": "2026-08-14T16:29:31.543854+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_202511.csv",
+      "size_bytes": 97690731,
+      "modified_utc": "2026-08-14T16:29:32.293971+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_202512.csv",
+      "size_bytes": 98051845,
+      "modified_utc": "2026-08-14T16:29:33.156290+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_20252.csv",
+      "size_bytes": 95106610,
+      "modified_utc": "2026-08-14T16:29:33.892230+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_20253.csv",
+      "size_bytes": 95518075,
+      "modified_utc": "2026-08-14T16:29:34.605071+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_20254.csv",
+      "size_bytes": 154630767,
+      "modified_utc": "2026-08-14T16:29:35.787933+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_20255.csv",
+      "size_bytes": 95902258,
+      "modified_utc": "2026-08-14T16:29:36.500324+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_20256.csv",
+      "size_bytes": 96204194,
+      "modified_utc": "2026-08-14T16:29:37.243179+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_20257.csv",
+      "size_bytes": 156431134,
+      "modified_utc": "2026-08-14T16:29:38.444356+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_20258.csv",
+      "size_bytes": 96668268,
+      "modified_utc": "2026-08-14T16:29:39.197459+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_20259.csv",
+      "size_bytes": 96994380,
+      "modified_utc": "2026-08-14T16:29:39.978099+00:00"
+    },
+    {
+      "relative_path": "Datos/TC2-2025/formato_tc2_20261.csv",
+      "size_bytes": 158570976,
+      "modified_utc": "2026-08-26T13:22:04.195247+00:00"
+    },
+    {
+      "relative_path": "Datos/Variables TC1 Y TC2.xlsx",
+      "size_bytes": 21258,
+      "modified_utc": "2026-08-26T13:20:48.551237+00:00"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "base_modelo_diaria",
+      "relative_path": "datos_modelo/base_modelo_diaria.csv",
+      "size_bytes": 61958,
+      "sha256": "520cc4eb36bf44e2e147938f724e5d302a66bc1ef16d8c9b7d3a3d92befe5c1e"
+    },
+    {
+      "name": "comparacion_mensual",
+      "relative_path": "datos_modelo/comparacion_mensual.csv",
+      "size_bytes": 2634,
+      "sha256": "2bd8b0a5666a06b8e59613c2662ab6aec18aa5cca764ab96b872cf5f7986e964"
+    },
+    {
+      "name": "consumo_calendarizado_segmento",
+      "relative_path": "datos_modelo/consumo_calendarizado_segmento.csv",
+      "size_bytes": 1062499,
+      "sha256": "3ba14a39ced1ab5e593374e7703f44c237e1122a19812384346d9d907c90c497"
+    },
+    {
+      "name": "indicadores_facturacion_mensual",
+      "relative_path": "datos_modelo/indicadores_facturacion_mensual.csv",
+      "size_bytes": 9456,
+      "sha256": "fc70601a46ca78a365e9e0e69db446486000e40461fc042e4ca22c5dffd837db"
+    },
+    {
+      "name": "diccionario_variables_relevantes",
+      "relative_path": "datos_modelo/diccionario_variables_relevantes.csv",
+      "size_bytes": 10194,
+      "sha256": "114ebbb5b5304417a9ac26735913673df3a9b84d99712b82d4976f7ca1ee2ace"
+    },
+    {
+      "name": "auditoria_esquemas",
+      "relative_path": "datos_modelo/auditoria_esquemas.csv",
+      "size_bytes": 10730,
+      "sha256": "9bea665d4501d848aa7e3ea6c86ec6cca1501762990114e16c57269dd40972b5"
+    },
+    {
+      "name": "reporte_calidad",
+      "relative_path": "datos_modelo/reporte_calidad.json",
+      "size_bytes": 63216,
+      "sha256": "dfa147df945a0fbf4ae0f60efc95df27228185d7815bd74fa275e7881d47fad3"
+    }
+  ]
+}
