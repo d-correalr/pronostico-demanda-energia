@@ -1,0 +1,204 @@
+{
+  "run_id": "20260912T223128Z",
+  "generated_utc": "2026-09-12T22:31:28.296128+00:00",
+  "notebook_version": "4.0.0-challengers",
+  "data_file": "data/processed/base_modelo_diaria.csv",
+  "data_sha256": "b9f670c14e72453b10d8dcd5bc97d02c33e25b864b9eb02bd5359d94f69bd915",
+  "data_range": [
+    "2025-01-01",
+    "2026-07-31"
+  ],
+  "target": "demanda_total_kwh",
+  "seed": 42,
+  "split": {
+    "development_end": "2026-04-30",
+    "calibration": [
+      "2026-05-01",
+      "2026-06-30"
+    ],
+    "out_of_time": [
+      "2026-07-01",
+      "2026-07-31"
+    ],
+    "cv_horizon_days": 28,
+    "n_cv_splits": 3
+  },
+  "selected": {
+    "label": "arbol_d8_leaf10",
+    "family": "arbol",
+    "params": {
+      "max_depth": 8,
+      "min_samples_leaf": 10
+    }
+  },
+  "champion_challenger": {
+    "current_champion": "extra_trees",
+    "decision": "mantener_champion",
+    "new_validation_windows": 4,
+    "relative_gain_vs_champion": 0.04146332946751787,
+    "minimum_windows": 3,
+    "minimum_relative_gain": 0.03
+  },
+  "calibration_metrics": {
+    "wape": 0.021344672580766725,
+    "mae": 56678.840858726886,
+    "rmse": 66448.59254874509,
+    "sesgo_pct": -0.0188426562792298,
+    "r2": 0.6659952799437878
+  },
+  "oot_metrics": [
+    {
+      "alternativa": "modelo_extra_trees",
+      "wape": 0.014291116715869192,
+      "mae": 38383.48010366873,
+      "rmse": 49990.299903703235,
+      "sesgo_pct": -0.008682514223345502,
+      "r2": 0.8136436581432537
+    },
+    {
+      "alternativa": "modelo_hist_gradient_boosting",
+      "wape": 0.015074660713866678,
+      "mae": 40487.94444018131,
+      "rmse": 51677.49138576003,
+      "sesgo_pct": -0.009384045196201653,
+      "r2": 0.8008521881846427
+    },
+    {
+      "alternativa": "modelo_arbol",
+      "wape": 0.01565965653152481,
+      "mae": 42059.142532971135,
+      "rmse": 55978.70548043976,
+      "sesgo_pct": -0.010960748631473767,
+      "r2": 0.7663216946061494
+    },
+    {
+      "alternativa": "modelo_ridge",
+      "wape": 0.015885188691978167,
+      "mae": 42664.88310353733,
+      "rmse": 53732.48916952423,
+      "sesgo_pct": -0.0077511116082640795,
+      "r2": 0.7846987198974723
+    },
+    {
+      "alternativa": "modelo_holt_winters",
+      "wape": 0.01602363054328768,
+      "mae": 43036.71409133922,
+      "rmse": 55420.74013148054,
+      "sesgo_pct": -0.00652425792807035,
+      "r2": 0.7709568356174608
+    },
+    {
+      "alternativa": "modelo_regresion_lineal",
+      "wape": 0.016093349870894978,
+      "mae": 43223.968207113416,
+      "rmse": 53630.945320823594,
+      "sesgo_pct": -0.007491470693175269,
+      "r2": 0.7855117052258965
+    },
+    {
+      "alternativa": "estacional_7",
+      "wape": 0.016256418296522912,
+      "mae": 43661.94193548386,
+      "rmse": 69692.35038763884,
+      "sesgo_pct": -0.0010683685971173648,
+      "r2": 0.6378046126186764
+    },
+    {
+      "alternativa": "modelo_random_forest",
+      "wape": 0.016436363427938815,
+      "mae": 44145.24359124494,
+      "rmse": 55088.45709344037,
+      "sesgo_pct": -0.010920051860149648,
+      "r2": 0.7736951246624056
+    },
+    {
+      "alternativa": "ultimo_valor",
+      "wape": 0.031948642685554765,
+      "mae": 85808.55612903225,
+      "rmse": 127848.11778110669,
+      "sesgo_pct": 0.020171568860009682,
+      "r2": -0.21888117468527502
+    },
+    {
+      "alternativa": "media_movil_7",
+      "wape": 0.04183331003408801,
+      "mae": 112357.07154927973,
+      "rmse": 122445.87817109127,
+      "sesgo_pct": -0.017945528277632093,
+      "r2": -0.11804950306418016
+    }
+  ],
+  "interval": {
+    "alpha": 0.1,
+    "coverage": 0.967741935483871,
+    "mean_width_kwh": 230325.87399999984
+  },
+  "diagnostics_linear": {
+    "adf_p": 1.010445548397455e-05,
+    "shapiro_p": 0.0004248290313517196,
+    "durbin_watson": 1.8371710062163953,
+    "breusch_pagan_p": 1.325850153898043e-06,
+    "max_finite_vif": 14868.829734272844
+  },
+  "checks": [
+    {
+      "criterio": "2.1 / R1–R18",
+      "evidencia": "Mapa trazable y brechas",
+      "aprobado": true
+    },
+    {
+      "criterio": "2.2 / R4",
+      "evidencia": "≥8 familias y ≥3 criterios",
+      "aprobado": true
+    },
+    {
+      "criterio": "2.3",
+      "evidencia": "ADF, VIF, Shapiro, DW, BP y gráficos",
+      "aprobado": true
+    },
+    {
+      "criterio": "2.4 / R5",
+      "evidencia": "Pliegues cronológicos",
+      "aprobado": true
+    },
+    {
+      "criterio": "2.4 / R6",
+      "evidencia": "Métrica recalculable",
+      "aprobado": true
+    },
+    {
+      "criterio": "2.5",
+      "evidencia": "Ocho iteraciones documentadas",
+      "aprobado": true
+    },
+    {
+      "criterio": "2.7 / R9",
+      "evidencia": "Repetición <=1e-6",
+      "aprobado": true
+    },
+    {
+      "criterio": "R10",
+      "evidencia": "Periodos TC1/TC2 disponibles",
+      "aprobado": true
+    },
+    {
+      "criterio": "R11",
+      "evidencia": "Toda fila válida o marcada",
+      "aprobado": true
+    },
+    {
+      "criterio": "R14",
+      "evidencia": "Sin identificadores",
+      "aprobado": true
+    }
+  ],
+  "versions": {
+    "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pandas": "2.3.3",
+    "numpy": "2.3.3",
+    "scikit_learn": "1.7.2",
+    "scipy": "1.16.3",
+    "statsmodels": "0.14.5"
+  }
+}
