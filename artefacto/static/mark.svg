@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title desc">
+  <title id="title">LEMANI</title>
+  <desc id="desc">Curva de demanda sobre tres barras.</desc>
+  <rect width="48" height="48" rx="12" fill="#4f5430"/>
+  <rect x="11" y="26" width="5" height="11" rx="2" fill="#aeb66f"/>
+  <rect x="22" y="19" width="5" height="18" rx="2" fill="#d2b85a"/>
+  <rect x="33" y="13" width="5" height="24" rx="2" fill="#e7d58d"/>
+  <path d="M9 28c7-1 10-7 16-6 5 1 8-5 15-8" fill="none" stroke="#f5f3e8" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="9" cy="28" r="1.8" fill="#f5f3e8"/>
+  <circle cx="25" cy="22" r="1.8" fill="#f5f3e8"/>
+  <circle cx="40" cy="14" r="1.8" fill="#f5f3e8"/>
+</svg>

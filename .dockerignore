@@ -1,0 +1,11 @@
+**
+!requirements-app.txt
+!artefacto/
+!artefacto/**
+!data/
+!data/processed/
+!data/processed/**
+!data/evidence/
+!data/evidence/**
+**/__pycache__/**
+**/*.pyc

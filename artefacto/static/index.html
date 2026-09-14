@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4f5430">
+  <meta name="description" content="Pronóstico de demanda de energía con escenarios, evidencia y trazabilidad.">
+  <title>LEMANI · Laboratorio de demanda</title>
+  <link rel="icon" href="/static/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script defer src="/vendor/plotly.min.js"></script>
+  <script defer src="/static/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <aside class="sidebar" aria-label="Navegación principal">
+    <a class="brand" href="#pronostico" aria-label="LEMANI, inicio">
+      <img src="/static/mark.svg" width="42" height="42" alt="">
+      <span>LEMANI<small>Laboratorio de demanda</small></span>
+    </a>
+    <div class="workspace-label">ESPACIO ANALÍTICO</div>
+    <nav>
+      <button class="nav-item active" data-view="pronostico" aria-current="page"><span class="nav-number">01</span>Pronóstico</button>
+      <button class="nav-item" data-view="calidad"><span class="nav-number">02</span>Calidad del insumo</button>
+    </nav>
+  </aside>
+  <main id="main" tabindex="-1">
+    <header class="topbar"><span>Energía Lemani SAS</span></header>
+    <div id="notification" class="notification" role="alert" hidden></div>
+    <div id="loading" class="loading" role="status">Preparando el pronóstico…</div>
+    <section id="pronostico" class="view">
+      <div class="page-heading"><div><p class="eyebrow">01 / PLANIFICACIÓN DE ENERGÍA</p><h1>Pronóstico de demanda</h1></div><span class="case-pill">PERIODO DISPONIBLE <strong>Agosto–octubre 2026</strong></span></div>
+      <form id="scenario-form" class="controls card">
+        <label>Modelo<select id="method" name="method"><option value="extra_trees">Extra Trees · seleccionado</option><option value="estacional_7">Estacional de 7 días</option><option value="media_movil_7">Media móvil de 7 días</option><option value="ultimo_valor">Último valor</option></select></label>
+        <label>Periodo pronosticado<select id="horizon" name="horizon"><option value="31">Agosto · 31 días</option><option value="61">Agosto–septiembre · 61 días</option><option value="92">Agosto–octubre · 92 días</option></select></label>
+        <label>Referencia del horizonte (MWh)<input id="reference" name="reference" type="number" min="0" max="1000000000" step="0.001" required aria-describedby="reference-hint" value="0"></label>
+        <button type="submit" class="primary" id="calculate" disabled>Actualizar escenario <span aria-hidden="true">↗</span></button>
+        <p class="control-note" id="reference-hint">La referencia inicial iguala el pronóstico mensual para facilitar la prueba; puedes editarla.</p>
+      </form>
+      <div class="result-caption"><span id="scenario-caption">Esperando resultados</span><span id="dirty-status" aria-live="polite"></span></div>
+      <div class="metrics-grid">
+        <article class="metric accent"><div>Demanda pronosticada</div><strong id="kpi-forecast">—</strong><small>MWh acumulados del horizonte</small></article>
+        <article class="metric"><div>Promedio diario</div><strong id="kpi-wape">—</strong><small id="kpi-mae">MWh esperados por día</small></article>
+        <article class="metric"><div>WAPE de validación</div><strong id="kpi-improvement">—</strong><small>Medido en julio de 2026</small></article>
+      </div>
+      <div class="main-grid">
+        <article class="card chart-card"><div class="card-heading"><div><p class="eyebrow">LECTURA DIARIA</p><h2>Pronóstico de demanda</h2></div><span class="unit-label">MWh / día</span></div><div id="forecast-chart" class="chart" role="img" aria-label="Serie diaria de pronóstico y baseline"></div><p class="footnote">Los valores posteriores al 31 de julio son estimaciones. La demanda real se incorporará cuando esté disponible para medir el error.</p></article>
+        <article class="card balance-card"><p class="eyebrow">ESCENARIO DE REFERENCIA</p><h2>¿Cuánto se aparta el volumen?</h2><div class="balance-value" id="balance-value">—</div><p id="balance-label">Referencia − pronóstico</p><div class="balance-track" aria-hidden="true"><div id="balance-fill"></div></div><dl class="compact-dl"><div><dt>Referencia elegida</dt><dd id="balance-reference">—</dd></div><div><dt>Pronóstico</dt><dd id="balance-forecast">—</dd></div><div><dt>Diferencia / referencia</dt><dd id="balance-pct">—</dd></div></dl><div class="inline-note">Esta diferencia no es una recomendación de compra. No incorpora precios, contratos, pérdidas adicionales ni restricciones comerciales.</div></article>
+      </div>
+      <div class="warning" id="interval-warning"><strong>Rango de planeación.</strong><span id="interval-summary"></span></div>
+      <div class="two-column">
+        <article class="card"><div class="card-heading"><div><p class="eyebrow">INTERPRETACIÓN LOCAL</p><h2>Qué mueve esta predicción</h2></div><label class="date-label">Día<select id="explain-date" aria-label="Día de la explicación"></select></label></div><p id="explanation-method" class="footnote"></p><div id="explanation-chart" class="chart explanation-chart" role="img" aria-label="Contribuciones locales a la predicción"></div><p id="explanation-summary" class="inline-note"></p><details><summary>Consultar todas las contribuciones</summary><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Aporte (MWh)</th></tr></thead><tbody id="explanation-table"></tbody></table></div></details></article>
+        <article class="card"><p class="eyebrow">LECTURA PARA PLANEACIÓN</p><h2>Identifica el punto de mayor demanda.</h2><p>El horizonte se construye desde el último dato disponible, usando las predicciones anteriores como rezagos.</p><div class="failure-box"><span>Pico pronosticado del horizonte</span><strong id="failure-date">—</strong><p id="failure-error">—</p></div><h3>Lectura del resultado</h3><p id="scenario-conclusion"></p><div class="inline-note">La validación final cubrió 31 días. Los horizontes de dos y tres meses sirven para planeación exploratoria y tienen mayor incertidumbre.</div></article>
+      </div>
+      <article class="card export-card"><div><p class="eyebrow">EVIDENCIA DESCARGABLE</p><h2>La corrida, con sus cifras y su origen.</h2><p>CSV diario + parámetros, métricas, versiones y huellas SHA-256. Se descarga el escenario aplicado, no los cambios pendientes.</p><code id="run-id">Sin corrida</code></div><div class="button-group"><button id="download-csv" class="secondary" disabled>Descargar CSV</button><button id="download-zip" class="primary" disabled>Descargar evidencia ZIP</button></div></article>
+      <details class="card"><summary>Ver tabla diaria accesible</summary><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Pronóstico (MWh)</th><th>Estacional (MWh)</th><th>Límite inferior (MWh)</th><th>Límite superior (MWh)</th></tr></thead><tbody id="daily-table"></tbody></table></div></details>
+    </section>
+    <section id="calidad" class="view" hidden>
+      <div class="page-heading"><div><p class="eyebrow">02 / DATOS</p><h1>Calidad del insumo</h1></div></div>
+      <div class="metrics-grid"><article class="metric accent"><div>Base diaria</div><strong id="quality-days">—</strong><small>Fechas únicas y continuas</small></article><article class="metric"><div>Reportes TC1 / TC2</div><strong id="quality-periods">—</strong><small>Enero 2025 a julio 2026</small></article><article class="metric"><div>Duplicados TC2 retirados</div><strong id="quality-duplicates">—</strong><small>Control documentado en la limpieza</small></article><article class="metric"><div>Identificadores restringidos</div><strong id="quality-privacy">—</strong><small>Inspección de campos del consolidado</small></article></div>
+      <article class="card"><div class="card-heading"><div><p class="eyebrow">CONTEXTO, NO VARIABLES FUTURAS</p><h2>Demanda y facturación reconstruida</h2></div><div class="filters"><label>Mes<select id="quality-month"><option value="all">Todo el periodo</option></select></label><label>Facturación<select id="billing-type"><option value="consumo_facturado_calendarizado_total_kwh">Todas las cadencias</option><option value="consumo_facturado_mensual_kwh">Mensual</option><option value="consumo_facturado_trimestral_kwh">Trimestral</option><option value="consumo_facturado_irregular_kwh">Irregular</option></select></label></div></div><div id="quality-chart" class="chart" role="img" aria-label="Demanda real y consumo facturado calendarizado"></div><p class="inline-note">La demanda real es el objetivo del modelo. El consumo facturado calendarizado es una reconstrucción retrospectiva y no se incorpora como predictor del futuro. La facturación de julio queda marcada como parcial porque no se dispone todavía del TC2 de agosto.</p><details><summary>Ver cifras del filtro</summary><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Demanda real (MWh)</th><th>Facturación seleccionada (MWh)</th></tr></thead><tbody id="quality-table"></tbody></table></div></details></article>
+      <div class="two-column"><article class="card"><p class="eyebrow">CONTROLES DE CARGA</p><h2>Qué se verifica al iniciar</h2><ul class="check-list"><li>577 días únicos, continuos y ordenados.</li><li>Demanda numérica, finita y no negativa.</li><li>Huellas de datos, código y modelo contra el manifiesto.</li><li>Versión compatible de las librerías del modelo.</li><li>Ausencia de campos identificadores restringidos en la base diaria.</li></ul><p id="reconciliation" class="inline-note"></p><p class="footnote">Los controles técnicos no sustituyen la autorización para divulgar cifras comerciales, incluso agregadas.</p></article><article class="card"><p class="eyebrow">AUDITORÍA POR PERIODO</p><h2>Depuración de TC2</h2><div class="table-wrap"><table><thead><tr><th>Reporte</th><th>Filas</th><th>Duplicadas</th><th>Inválidas</th><th>Sin TC1</th></tr></thead><tbody id="quality-audit"></tbody></table></div></article></div>
+    </section>
+    <footer><span>LEMANI · Grupo 7 · MIAD</span><span>Demanda en kWh en el motor / MWh en pantalla</span></footer>
+  </main>
+</body>
+</html>
